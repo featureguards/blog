@@ -1,10 +1,10 @@
 import React from 'react'
-import { Link, StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import { useTheme } from '../Theming'
 import { bpMaxSM } from '../../lib/breakpoints'
-import MobileMenu from './MobileMenu'
-import Links from './Links'
+// import MobileMenu from './MobileMenu'
+// import Links from './Links'
 
 import Container from '../Container'
 
@@ -29,8 +29,8 @@ const Header = ({ siteTitle }) => {
             align-items: center;
           `}
         >
-          <Link
-            to="/"
+          <a
+            href="https://www.featureguards.com"
             aria-label="go to homepage"
             css={css`
               color: white;
@@ -41,7 +41,7 @@ const Header = ({ siteTitle }) => {
             `}
           >
             {siteTitle}
-          </Link>
+          </a>
           <div
             css={css`
               font-size: 16px;
@@ -69,11 +69,11 @@ const Header = ({ siteTitle }) => {
                 }
               `}
             >
-              <Links />
+              {/* <Links /> */}
             </div>
-            <MobileMenu>
+            {/* <MobileMenu>
               <Links />
-            </MobileMenu>
+            </MobileMenu> */}
           </div>
         </nav>
       </Container>
@@ -81,7 +81,7 @@ const Header = ({ siteTitle }) => {
   )
 }
 
-const ConnectedHeader = props => (
+const ConnectedHeader = (props) => (
   <StaticQuery
     query={graphql`
       query {
@@ -92,7 +92,7 @@ const ConnectedHeader = props => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <Header siteTitle={data.site.siteMetadata.title} {...props} />
     )}
   />

@@ -10,7 +10,7 @@ const createPosts = (createPage, createRedirect, edges) => {
     const pagePath = node.fields.slug
 
     if (node.fields.redirects) {
-      node.fields.redirects.forEach(fromPath => {
+      node.fields.redirects.forEach((fromPath) => {
         createRedirect({
           fromPath,
           toPath: pagePath,
@@ -70,7 +70,7 @@ exports.createPages = ({ actions, graphql }) =>
     const { edges } = data.allMdx
     const { createRedirect, createPage } = actions
     createPosts(createPage, createRedirect, edges)
-    createPaginatedPages(actions.createPage, edges, '/blog', {
+    createPaginatedPages(actions.createPage, edges, '/eng', {
       categories: [],
     })
   })
@@ -131,7 +131,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
     const slug =
       parent.sourceInstanceName === 'legacy'
-        ? `blog/${node.frontmatter.date
+        ? `${node.frontmatter.date
             .split('T')[0]
             .replace(/-/g, '/')}/${titleSlugged}`
         : node.frontmatter.slug || titleSlugged

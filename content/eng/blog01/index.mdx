@@ -1,0 +1,86 @@
+---
+slug: launch
+date: 2022-08-04
+title: 'Why We built FeatureGuards'
+description: 'Building the next-gen feature flag system'
+published: true
+author: 'Bashar Al-Rawi'
+banner: './banner.png'
+---
+
+# Why build yet another feature flag system?
+
+Every company I worked for has built some version of a feature flag system with various degrees of
+feature-sets, availability requirements and learnings. After joining my latest company, I decided
+that it's time to build a feature flag system that is universally applicable to companies of all
+sizes so nobody needs to re-invent the wheel. I'm extremely excited to start that journey. Our
+roadmap is full of many exciting features. Stay tuned! In the meantime, give 
+[FeatureGuards](https://www.featureguards.com) a try yourself and see it yourself.
+
+
+# What is a feature flag?
+
+Feature flags are ways to control how new features or code changes are rolled out. They're used
+in various scenarios:
+
+
+## Gradual Rollouts
+
+Once the engineering team gets to a certain size, it becomes extremely likely for bugs to surface
+during deployments causing the site or application to fail for almost every user, hence requiring
+rollbacks and post-mortems. In one of my previous jobs, we couldn't release code for more than a
+month because every time we release new code, it broke something different. Imagine you have 10s or
+100s of engineers checking in code every day. It's just a matter of time before rollbacks start
+creeping in.
+
+One way to address this is by controlling the blast radius of code changes by doing something as
+follows in your business logic:
+
+```py
+if is_on('NEW_EXPERIMENT', {'user_id': 1234}):
+  # new logic
+else:
+  # existing logic
+```
+
+The main advantage here is that we can control the percentage of users where new logic will run for
+and can ramp that up over time. Usually, you would start with 0%, ramp up the rollout, and monitor
+the impact of the change by looking at relevant dashboards. The moment you observe new exceptions,
+performance degradation, or error increase, then you would turn off the feature and continue
+business as usual. Without a feature flag system, you would rollback the change. You can have
+canary to minimize impact, but you don't have much control. There could be many code changes being
+rolled out and sometimes it's hard to know what change caused what.
+
+## Gating Features
+
+It's quite common to enable or disable features based on some attribute associated with the user, 
+company, location...etc. For example, a new feature is rolled out to a selected set of beta-test 
+users, internal users, or some other set of IDs. Instead of adding an attribute on the user per
+feature to be included/excluded, this can be delegated to a feature flag system where that mapping
+is dynamic and can be updated on the fly (i.e., new beta test users).
+
+
+## Kill Switch
+
+In case of emergencies, it's sometimes better to have a degraded user experience than a full site
+outage. So, it's useful to turn off certain features to reduce load on the backend. For example,
+imagine a scenario where the database is overloaded. The load is coming let's say from unoptimized
+queries that are associated with a particular feature (i.e., search). It's better to turn off search
+temporarily to fix the issue as opposed to rendering the entire website unusable. Assuming the 
+search feature code is gated by a feature flag, this can be easily done. In fact, it could be even
+ramped down and not necessarily turned off immediately.
+
+
+
+# Is it really complicated?
+
+Like most problems in life, it's easy to build anything that *works*. It's much harder to build
+something that works extremely well and all the time. One big characteristic that is needed for a
+feature flag system is that its availability **must** be strictly better than the system using it.
+Otherwise, it's not useful. So, building a system with 4 9s of availability or more isn't as simple
+as it may seem. We will share more how we built [FeatureGuards](https://www.featureguards.com) with
+that in mind. Stay tuned.
+
+# What's next?
+
+We're focused on building a world class feature flag system. Stay tuned for more.

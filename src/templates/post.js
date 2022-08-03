@@ -21,7 +21,7 @@ export default function Post({
   const banner = mdx.frontmatter.banner
 
   return (
-    <Layout site={site} frontmatter={mdx.frontmatter}>
+    <Layout site={site} frontmatter={mdx.frontmatter} noSubscribeForm>
       <SEO frontmatter={mdx.frontmatter} isBlogPost />
       <article
         css={css`
@@ -91,7 +91,7 @@ export default function Post({
 }
 
 export const pageQuery = graphql`
-  query($id: String!) {
+  query ($id: String!) {
     site {
       ...site
     }

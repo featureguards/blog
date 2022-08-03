@@ -15,11 +15,11 @@ const Blog = ({
   const { page, nextPagePath, previousPagePath } = pagination
 
   const posts = page
-    .map(id => allMdx.edges.find(edge => edge.node.id === id))
-    .filter(post => post !== undefined)
+    .map((id) => allMdx.edges.find((edge) => edge.node.id === id))
+    .filter((post) => post !== undefined)
 
   return (
-    <Layout site={site}>
+    <Layout site={site} noSubscribeForm>
       <SEO />
       <Container noVerticalPadding>
         {posts.map(({ node: post }) => (

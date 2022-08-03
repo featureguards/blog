@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-egghead-blog",
-  "description": "This is a starter for egghead content creator blogs",
+  "name": "featureguards-blog",
+  "description": "Featureguards blog",
   "version": "1.0.0",
-  "author": "egghead.io <support@egghead.io> (https://egghead.io)",
-  "repository": "https://github.com/eggheadio/gatsby-starter-egghead-blog",
+  "author": "Bashar Al-Rawi <bashar@featureguards.com> (https://www.featureguards.com)",
+  "repository": "https://github.com/featureguards/blog",
   "dependencies": {
     "@callstack/react-theme-provider": "^3.0.5",
     "@emotion/core": "^10.0.22",
@@ -26,6 +26,7 @@
     "gatsby-plugin-emotion": "^4.1.12",
     "gatsby-plugin-feed": "^2.3.19",
     "gatsby-plugin-google-analytics": "^2.1.23",
+    "gatsby-plugin-google-gtag": "^4.20.0",
     "gatsby-plugin-manifest": "^2.2.23",
     "gatsby-plugin-mdx": "^1.0.53",
     "gatsby-plugin-meta-redirect": "^1.1.1",
@@ -67,7 +68,7 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "start": "serve public/",
     "now-build": "npm run build"
   }

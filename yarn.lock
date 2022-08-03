@@ -923,6 +923,13 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
+"@babel/runtime@^7.15.4":
+  version "7.18.9"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.18.9.tgz#b4fcfce55db3d2e5e080d2490f608a3b9f407f4a"
+  integrity sha512-lkqXDcvlFT5rvEjiu6+QYO+1GXrEHRo2LOtS7E4GtX5ESIZOgepqsZBVIj6Pv+a6zqsya9VCgiK1KAK4BvJDAw==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/runtime@^7.3.4", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7":
   version "7.9.2"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.9.2.tgz#d90df0583a3a252f09aaa619665367bae518db06"
@@ -3296,14 +3303,14 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000984:
-  version "1.0.30000987"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000987.tgz#bc6b47217afd8226a2b1964635c6bff62cdf5738"
-  integrity sha512-O3VrjtRMTxoU5Cn5/QSmXeIR1gkVps4j9jqfIm4FLaQ5JzqBlVjMUG1xWnoYFv8N+H3Lp++aa05TekyIbjHL7g==
+  version "1.0.30001373"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001373.tgz"
+  integrity sha512-pJYArGHrPp3TUqQzFYRmP/lwJlj8RCbVe3Gd3eJQkAV8SAC6b19XS9BjMvRdvaS8RMkaTN8ZhoHP6S1y8zzwEQ==
 
 caniuse-lite@^1.0.30000989, caniuse-lite@^1.0.30001038, caniuse-lite@^1.0.30001039:
-  version "1.0.30001041"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001041.tgz#c2ea138dafc6fe03877921ddcddd4a02a14daf76"
-  integrity sha512-fqDtRCApddNrQuBxBS7kEiSGdBsgO4wiVw4G/IClfqzfhW45MbTumfN4cuUJGTM0YGFNn97DCXPJ683PS6zwvA==
+  version "1.0.30001373"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001373.tgz"
+  integrity sha512-pJYArGHrPp3TUqQzFYRmP/lwJlj8RCbVe3Gd3eJQkAV8SAC6b19XS9BjMvRdvaS8RMkaTN8ZhoHP6S1y8zzwEQ==
 
 caseless@~0.12.0:
   version "0.12.0"
@@ -6501,6 +6508,14 @@ gatsby-plugin-google-analytics@^2.1.23:
   dependencies:
     "@babel/runtime" "^7.8.7"
     minimatch "3.0.4"
+
+gatsby-plugin-google-gtag@^4.20.0:
+  version "4.20.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-gtag/-/gatsby-plugin-google-gtag-4.20.0.tgz#47351a0e5cde0d7a476eeca091b10aedb525c301"
+  integrity sha512-+YK6UDmA76frkUganVi/CY6r7vBewxK3gnbRqRlNsxQWQe/WUGzk3OmBLHjca6WFlaLywGZ9bsNs8UxL9Ku1Ew==
+  dependencies:
+    "@babel/runtime" "^7.15.4"
+    minimatch "^3.1.2"
 
 gatsby-plugin-manifest@^2.2.23:
   version "2.3.3"
@@ -9868,6 +9883,13 @@ minimatch@3.0.4, minimatch@^3.0.3, minimatch@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.0.4.tgz#5166e286457f03306064be5497e8dbb0c3d32083"
   integrity sha512-yJHVQEhyqPLUTgt9B83PXu6W3rx4MvvHvSUvToogpwoGDOUQ+yDrR0HRot+yOCdCO7u4hX3pWft6kWBBcqh0UA==
+  dependencies:
+    brace-expansion "^1.1.7"
+
+minimatch@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.1.2.tgz#19cd194bfd3e428f049a70817c038d89ab4be35b"
+  integrity sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==
   dependencies:
     brace-expansion "^1.1.7"
 

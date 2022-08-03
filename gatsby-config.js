@@ -12,15 +12,14 @@ module.exports = {
     title: config.siteTitle,
     twitterHandle: config.twitterHandle,
     description: config.siteDescription,
-    keywords: ['Video Blogger'],
+    keywords: ['feature flags'],
     canonicalUrl: config.siteUrl,
     image: config.siteLogo,
     author: {
       name: config.author,
       minibio: `
-        <strong>egghead</strong> is the premier place on the internet for 
-        experienced developers to enhance their skills and stay current
-        in the fast-faced field of web development.
+        <strong>FeatureFlags</strong> is the next-generation feature flag system
+        that helps developers ship features fasaters.
       `,
     },
     organization: {
@@ -37,8 +36,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/content/blog`,
-        name: 'blog',
+        path: `${__dirname}/content/eng`,
+        name: 'eng',
       },
     },
     {
@@ -78,8 +77,8 @@ module.exports = {
             type: 'image/png',
           },
           {
-            src: '/android-chrome-512x512.png',
-            sizes: '512x512',
+            src: '/android-chrome-256x256.png',
+            sizes: '256x256',
             type: 'image/png',
           },
         ],
@@ -88,7 +87,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: `GOOGLE_ID`,
+        trackingId: `G-DCZS5H8B12`,
       },
     },
     {
@@ -109,7 +108,7 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMdx } }) => {
-              return allMdx.edges.map(edge => {
+              return allMdx.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   date: edge.node.fields.date,
