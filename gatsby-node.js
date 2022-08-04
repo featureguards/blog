@@ -70,7 +70,7 @@ exports.createPages = ({ actions, graphql }) =>
     const { edges } = data.allMdx
     const { createRedirect, createPage } = actions
     createPosts(createPage, createRedirect, edges)
-    createPaginatedPages(actions.createPage, edges, '/eng', {
+    createPaginatedPages(actions.createPage, edges, '/', {
       categories: [],
     })
   })

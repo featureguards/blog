@@ -98,7 +98,7 @@ export default function Index({ data: { site, allMdx } }) {
             </Description>
           </div>
         ))}
-        <Link to="/eng" aria-label="Visit blog page">
+        <Link to="/" aria-label="Visit blog page">
           View all articles
         </Link>
         <hr />
